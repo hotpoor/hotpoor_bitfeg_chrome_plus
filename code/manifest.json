@@ -17,13 +17,13 @@
         "default_popup": "popup.html"
     },
     "content_scripts": [
-        // {
-        //     "matches":["http://*/*", "https://*/*"],
-        //     "js":["js/jquery-1.12.4.min.js", "js/translate_content.js"],
-        //     "css":["css/translate_content.css"],
-        //     "run_at": "document_end",
-        //     "all_frames": false 
-        // }
+        {
+            "matches":["http://*/*", "https://*/*"],
+            "js":["js/jquery-1.12.4.min.js"],
+            "css":[],
+            "run_at": "document_end",
+            "all_frames": false 
+        }
     ],
     "permissions": ["http://*/*", "https://*/*", "ws://*/*", "wss://*/*"] 
 }
