@@ -1,0 +1,210 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BitFEG</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+        body{
+            width: 380px;
+            height: 560px;
+            overflow-y: auto;
+        }
+        .hide{
+            display: none;
+        }
+        .menus{
+            display: flex;
+        }
+        .menu_item{
+            flex: 1;
+            text-align: center;
+            font-weight: normal;
+            font-size: 10px;
+            color: #666;
+            cursor: pointer;
+            margin: 3px 4px
+        }
+        .menu_item_current{
+            font-weight: bold;
+            color: #333;
+        }
+        .menu_main>.options{
+            display: flex;
+        }
+        .menu_main>.options>.option{
+            flex: 1;
+            text-align: center;
+            cursor: pointer;
+        }
+        .menu_main>.options>.option>p{
+            margin:10px;
+            padding: 4px 6px;
+            font-size: 14px;
+            background-image: -webkit-linear-gradient(top,white,white);
+            color: #fc64af;
+            height: 30px;
+            border-radius: 19px;
+            line-height: 30px;
+            font-weight: bold;
+        }
+        .menu_main>.options>.option.selected>p{
+            margin:5px;
+            padding: 4px 6px;
+            font-size: 14px;
+            background-image: -webkit-linear-gradient(top,#fc64af,#d25fec);
+            color: white;
+            height: 30px;
+            border-radius: 19px;
+            line-height: 30px;
+            box-shadow: 0px 4px 10px rgba(252,100,175,0.3);
+            font-weight: normal;
+        }
+        .menu_main>.title{
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .lines>.line>div{
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        .lines>.line>.subtitle{
+            display: flex;
+        }
+        .lines>.line>.subtitle>.main{
+            flex: 3;
+            font-size: 10px;
+            color: #999;
+            font-weight: bold;
+            text-align: left;
+        }
+        .lines>.line>.subtitle>.right{
+            flex: 2;
+            font-size: 10px;
+            color: #fc64af;
+            font-weight: bold;
+            text-align: right;
+        }
+        .menus_main{
+            padding: 15px;
+        }
+        .line>.subtitle_inputs>.subtitle_input_div{
+            margin: 10px;
+            width: 100%;
+        }
+        .line>.subtitle_inputs>.subtitle_input_div>.subtitle_input{
+            padding: 0px 12px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 20px;
+            border: 1px solid #999;
+            color: #666;
+        }
+        .line>.subtitle_inputs>.subtitle_input_div>.subtitle_input.oneline{
+            width: 100%;
+        }
+        .line>.subtitle_inputs>.subtitle_input_div>.add_one{
+            border:1px solid #999;
+            width: 40px;
+            height:40px;
+            border-radius: 20px;
+            padding: 0px;
+            margin: 0px;
+            color: #999;
+            margin-left:10px;
+            background: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .line>.subtitle_inputs>.subtitle_input_div>.subtitle_input.fourone{width: 25%;}
+        .line>.subtitle_inputs>.subtitle_input_div>.subtitle_input.fourthree{width: 75%;}
+        .line>.line_options{
+            display:flex;
+        }
+        .line>.line_options>.line_option{
+            flex: 1;
+        }
+        .line>.line_options>.line_option>.subtitle{
+            font-size: 10px;
+            color: #999;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <script src="js/bitfeg.js"></script>
+    <div class="menus">
+        <div class="menu_item" data-name="bitfeg_create">Create</div>
+        <div class="menu_item" data-name="bitfeg_scale">Scale</div>
+        <div class="menu_item" data-name="bitfeg_market">Market</div>
+        <div class="menu_item" data-name="bitfeg_community">Community</div>
+        <div class="menu_item" data-name="bitfeg_mine">Mine</div>
+    </div>
+    <div class="menus_main">
+        <div class="menu_main hide" data-name="bitfeg_create">
+            <div class="title">Create Market</div>
+            <div class="options">
+                <div class="option selected">
+                    <p>Configure Market</p>
+                </div>
+                <div class="option">
+                    <p>Found Market</p>
+                </div>
+            </div>
+            <div class="lines">
+                <div class="line">
+                    <div class="subtitle">
+                        <span class="main">Select Market Questions</span>
+                        <span class="right">Market Url</span>
+                    </div>
+                    <div class="subtitle_inputs">
+                        <div class="subtitle_input_div">
+                            <input class="subtitle_input oneline" type="text" name="subtitle_input" placeholder="Which question do you want the world predict?">
+                        </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="subtitle">
+                        <span class="main">Add Outcome</span>
+                        <span class="right">Set manual probability</span>
+                    </div>
+                    <div class="subtitle_inputs">
+                        <div class="subtitle_input_div">
+                            <input class="subtitle_input fourthree" type="text" name="subtitle_input" placeholder="Add New Outcome"><button class="add_one fourone">+<button>
+                        </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="line_options">
+                        <div class="line_option">
+                            <div class="subtitle">Resolution Date</div>
+                            <div></div>
+                        </div>
+                        <div class="line_option">
+                            <div class="subtitle">Category</div>
+                            <div></div>
+                        </div>
+                        <div class="line_option">
+                            <div class="subtitle">Arbitrator</div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="menu_main hide" data-name="bitfeg_scale"></div>
+        <div class="menu_main hide" data-name="bitfeg_market"></div>
+        <div class="menu_main hide" data-name="bitfeg_community"></div>
+        <div class="menu_main hide" data-name="bitfeg_mine"></div>
+    </div>
+</body>
+</html>

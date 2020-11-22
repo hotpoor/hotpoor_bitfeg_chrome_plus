@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "BitFEG",
+    "version": "0.0.1",
+    "description": "BitFEG，一款实用的合约创建工具",
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "images/icon19.png",
+            "38": "images/icon38.png"
+        },
+        "default_title": "BitFEG",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        // {
+        //     "matches":["http://*/*", "https://*/*"],
+        //     "js":["js/jquery-1.12.4.min.js", "js/translate_content.js"],
+        //     "css":["css/translate_content.css"],
+        //     "run_at": "document_end",
+        //     "all_frames": false 
+        // }
+    ],
+    "permissions": ["http://*/*", "https://*/*", "ws://*/*", "wss://*/*"] 
+}
