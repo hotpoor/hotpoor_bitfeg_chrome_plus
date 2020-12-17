@@ -283,7 +283,7 @@
         .scale_own_earn_btn{
             margin-top: 10px;
             color: #666;
-            background-color: #d3d3d3;
+            background-color: #e3e3e3;
             border-radius: 6px;
             font-size: 14px;
             padding: 6px 10px;
@@ -319,6 +319,89 @@
         }#scale_time_ratio{
             width: 100%;
         }
+
+        input#scale_value[type=range] {
+            margin:15px 0px;
+            -webkit-appearance: none;
+            height: 6px;
+            background: -webkit-linear-gradient(left,#ffc107,#ff9800) no-repeat white;
+            border-radius: 3px;
+            background-size: 30% 100%;
+            box-shadow: 0px 3px 4px rgba(0,0,0,0.05);
+        }
+        input#scale_time_ratio[type=range]{
+            margin:15px 0px;
+            -webkit-appearance: none;
+            height: 6px;
+            background: -webkit-linear-gradient(left,#fc64af,#d25fec) no-repeat white;
+            border-radius: 3px;
+            background-size: 40% 100%;
+            box-shadow: 0px 3px 4px rgba(0,0,0,0.05);
+        }
+        input#scale_value[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            /*background-image: url("../img/recommend/slider.svg");*/
+            background-size: cover;
+            box-shadow: 0 6px 6px rgba(255,137,129,0.35);
+            border-radius: 10px;
+            border:none;
+            z-index: 5;
+            background:#ffc107;
+            cursor: pointer;
+        }
+        input#scale_time_ratio[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            /*background-image: url("../img/recommend/slider.svg");*/
+            background-size: cover;
+            box-shadow: 0 6px 6px rgba(255,137,129,0.35);
+            border-radius: 10px;
+            border:none;
+            z-index: 5;
+            background:#fc64af;
+            cursor: pointer;
+        }
+        .scale_time_span,.scale_token_span_left{
+            flex: 1;text-align: left;
+            font-size: 14px;
+            color: #666;
+            font-weight: bold;
+        }
+        .scale_time_max,.scale_token_span_right{
+            flex: 1;text-align: right;
+            font-size: 14px;
+            color: #666;
+            font-weight: bold;
+        }
+        .token_change_btn_area,.token_value_num_area{
+            flex: 1;width: 100%;
+        }
+        #oken_change_btn{
+            background-image: -webkit-linear-gradient(top,#9C27B0,#673AB7);
+            border:0;
+            border-radius: 20px;
+            width: 90%;
+            height: 36px;
+            color: white;
+            font-size: 16px;
+        }
+        #token_value_num{
+            box-shadow: 0px 3px 6px rgba(0,0,0,0.05) inset;
+            color: #fc64af;
+            border: 0;
+            border-radius: 20px;
+            line-height: 32px;
+            padding: 4px 16px 0px 16px;
+            font-size: 18px;
+            background-color: white;
+            width: 90%;
+            text-align:right;
+        }
+
+
     </style>
     <script src="js/jquery-1.12.4.min.js"></script>
 </head>
@@ -399,27 +482,29 @@
             </div>
             <div class="scale_range_value">
                 <span class="scale_max">5% MAX</span>
-                <input id="scale_value" type="range" name="">
+                <input id="scale_value" type="range" name="" value="1.5" min="0.0" step="0.1" max="5.0">
             </div>
             <div>
-                <div>
-                    <div>Choose Your LP Token</div>
-                    <div>Token</div>
+                <div style="display: flex;">
+                    <span class="scale_token_span_left">Choose Your LP Token</span>
+                    <span class="scale_token_span_right">Token</span>
                 </div>
-                <div>
-                    <div>Token Amount</div>
-                    <div>
-                        <input type="number" min="0" name="">
+                <div style="display: flex;margin:15px 0px;">
+                    <div class="token_change_btn_area" align="left">
+                        <button id="oken_change_btn">Token</button>
+                    </div>
+                    <div class="token_value_num_area" align="right">
+                        <input id="token_value_num" type="number" min="0" name="" value="86">
                     </div>
                 </div>
             </div>
             <div class="scale_range_time">
-                <div>
+                <div style="display: flex;">
                     <span class="scale_time_span">Scale ratio</span>
-                    <span class="scale_time_max">10 TimeLeft</span>
+                    <span class="scale_time_max">10 Time left</span>
                 </div>
                 <div>
-                    <input id="scale_time_ratio" type="range" name="">
+                    <input id="scale_time_ratio" type="range" name="" value="0.4" min="0.0" step="0.01" max="1.0">
                 </div>
                 <div style="display: flex;margin-top: 10px;">
                     <div style="flex: 1;width: 50%;">
