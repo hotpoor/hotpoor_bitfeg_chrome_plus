@@ -81,6 +81,7 @@
             border-radius: 19px;
             line-height: 30px;
             font-weight: bold;
+            cursor: pointer;
         }
         .action_tools_btn.cancel{
             width: 100px;
@@ -198,6 +199,62 @@
           color: #999;
           font-size: 12px;
         }  
+        .market_lines>.market_line{
+            padding: 15px;
+            background-color: white;
+            border-radius: 16px;
+            margin: 20px 0px;
+        }
+        .market_lines>.market_line>.title{
+            font-weight: bold;
+            font-size: 14px;
+            word-break: break-all;
+            margin-bottom: 20px;
+        }
+        .market_lines>.market_line>.market_nums{
+            display: flex;
+        }
+        .market_lines>.market_line>.market_nums>div{
+            flex: 1;
+        }
+        .market_tags{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .market_tag{
+            color: #999;
+            margin: 5px;
+            background-color: white;
+            border-radius: 20px;
+            height: 20px;
+            box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+            padding: 4px 12px;
+            line-height: 20px;
+            min-width: 50px;
+            text-align: center;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .market_tag.color1{
+            color: rgba(153,153,153,1);
+            box-shadow: 0px 3px 6px rgba(153,153,153,0.3);
+        }
+        .market_tag.color2{
+            color: rgba(244,67,54);
+            box-shadow: 0px 3px 6px rgba(244,67,54,0.3);
+        }
+        .market_tag.color3{
+            color: rgba(255,193,7);
+            box-shadow: 0px 3px 6px rgba(255,193,7,0.3);
+        }
+        .market_tag.color4{
+            color: rgba(76,175,100);
+            box-shadow: 0px 3px 6px rgba(76,175,100,0.3);
+        }
+        .market_tag.color5{
+            color: rgba(33,150,243);
+            box-shadow: 0px 3px 6px rgba(33,150,243,0.3);
+        }
 
     </style>
     <script src="js/jquery-1.12.4.min.js"></script>
@@ -208,6 +265,7 @@
         <div class="menu_item" data-name="bitfeg_create">Create</div>
         <div class="menu_item" data-name="bitfeg_scale">Scale</div>
         <div class="menu_item" data-name="bitfeg_market">Market</div>
+        <div class="menu_item" data-name="bitfeg_swap">Swap</div>
         <div class="menu_item" data-name="bitfeg_community">Community</div>
         <div class="menu_item" data-name="bitfeg_mine">Mine</div>
     </div>
@@ -273,9 +331,66 @@
 
         </div>
         <div class="menu_main hide" data-name="bitfeg_scale"></div>
-        <div class="menu_main hide" data-name="bitfeg_market"></div>
+        <div class="menu_main hide" data-name="bitfeg_market">
+            <div class="market_tags">
+                <div class="market_tag color1">Popular</div>
+                <div class="market_tag color2">Profitable</div>
+                <div class="market_tag color3">New</div>
+                <div class="market_tag color4">Hot</div>
+                <div class="market_tag color5">KOL Choose</div>
+            </div>
+            <div class="market_lines">
+                <div class="market_line">
+                    <div class="title">Will ETH trade above $300 on Coinbase ay time on November 1st?</div>
+                    <div class="market_nums">
+                        <div class="market_options">Yes(43.77%)</div>
+                        <div class="market_date">3months</div>
+                        <div class="market_state">remaining</div>
+                        <div class="market_liquidity">900.68 wbtc-Liquidity</div>
+                    </div>
+                </div>
+                <div class="market_line">
+                    <div class="title">Will ETH trade above $300 on Coinbase ay time on November 1st?</div>
+                    <div class="market_nums">
+                        <div class="market_options">Yes(43.77%)</div>
+                        <div class="market_date">3months</div>
+                        <div class="market_state">remaining</div>
+                        <div class="market_liquidity">900.68 wbtc-Liquidity</div>
+                    </div>
+                </div>
+                <div class="market_line">
+                    <div class="title">Will ETH trade above $300 on Coinbase ay time on November 1st?</div>
+                    <div class="market_nums">
+                        <div class="market_options">Yes(43.77%)</div>
+                        <div class="market_date">3months</div>
+                        <div class="market_state">remaining</div>
+                        <div class="market_liquidity">900.68 wbtc-Liquidity</div>
+                    </div>
+                </div>
+                <div class="market_line">
+                    <div class="title">Will ETH trade above $300 on Coinbase ay time on November 1st?</div>
+                    <div class="market_nums">
+                        <div class="market_options">Yes(43.77%)</div>
+                        <div class="market_date">3months</div>
+                        <div class="market_state">remaining</div>
+                        <div class="market_liquidity">900.68 wbtc-Liquidity</div>
+                    </div>
+                </div>
+                <div class="market_line">
+                    <div class="title">Will ETH trade above $300 on Coinbase ay time on November 1st?</div>
+                    <div class="market_nums">
+                        <div class="market_options">Yes(43.77%)</div>
+                        <div class="market_date">3months</div>
+                        <div class="market_state">remaining</div>
+                        <div class="market_liquidity">900.68 wbtc-Liquidity</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu_main hide" data-name="bitfeg_swap"></div>
         <div class="menu_main hide" data-name="bitfeg_community"></div>
         <div class="menu_main hide" data-name="bitfeg_mine"></div>
+
     </div>
 </body>
 </html>
