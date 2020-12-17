@@ -255,7 +255,40 @@
             color: rgba(33,150,243);
             box-shadow: 0px 3px 6px rgba(33,150,243,0.3);
         }
+        .scale_own{
+            display: flex;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0px 6px 9px rgba(0,0,0,0.1) inset;
+        }
+        .scale_own_left,.scale_own_right{
+            flex: 1;
+        }
+        .scale_own_title{
+            font-size: 14px;
+            color: #666;
+        }
 
+        .scale_own_value{
+            margin-top: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+        .scale_own_earn{
+            font-size: 14px;
+            color: #333;
+        }
+        .scale_own_earn_btn{
+            margin-top: 10px;
+            color: #666;
+            background-color: #c3c3c3;
+            border-radius: 6px;
+            font-size: 14px;
+            padding: 6px 10px;
+            border:0;
+            cursor: pointer;
+        }
     </style>
     <script src="js/jquery-1.12.4.min.js"></script>
 </head>
@@ -330,7 +363,58 @@
             </div>
 
         </div>
-        <div class="menu_main hide" data-name="bitfeg_scale"></div>
+        <div class="menu_main hide" data-name="bitfeg_scale">
+            <div class="scale_title">
+                <span class="scale_span">Scale</span><span class="scale_now">1ltc=0.9eth*(1+1.5%)</span>
+            </div>
+            <div class="scale_range_value">
+                <span class="scale_max">5% MAX</span>
+                <input id="scale_value" type="range" name="">
+            </div>
+            <div>
+                <div>
+                    <div>Choose Your LP Token</div>
+                    <div>Token</div>
+                </div>
+                <div>
+                    <div>Token Amount</div>
+                    <div>
+                        <input type="number" min="0" name="">
+                    </div>
+                </div>
+            </div>
+            <div class="scale_range_time">
+                <div>
+                    <span class="scale_time_span">Scale ratio</span>
+                    <span class="scale_time_max">10 TimeLeft</span>
+                </div>
+                <div>
+                    <input id="scale_time_ratio" type="range" name="">
+                </div>
+                <div>
+                    <div><input type="" name=""></div>
+                    <div><button>approve</button></div>
+                </div>
+            </div>
+            <div class="scale_own">
+                <div class="scale_own_left">
+                    <div class="scale_own_title">YOUR TOKENS</div>
+                    <div class="scale_own_value"><span>668</span></div>
+                </div>
+                <div class="scale_own_right">
+                    <div class="scale_own_earn">Balance earn: <span>0</span></div>
+                    <div style="display: flex;">
+                        <div style="flex: 1;">
+                            <button class="scale_own_earn_btn">Harvest</button>
+                        </div>
+                        <div style="flex: 1;">
+                            <button class="scale_own_earn_btn">Withdraw</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <div class="menu_main hide" data-name="bitfeg_market">
             <div class="market_tags">
                 <div class="market_tag color1">Popular</div>
