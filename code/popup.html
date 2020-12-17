@@ -256,11 +256,12 @@
             box-shadow: 0px 3px 6px rgba(33,150,243,0.3);
         }
         .scale_own{
+            margin:20px 0px;
             display: flex;
             background-color: white;
             border-radius: 20px;
             padding: 20px;
-            box-shadow: 0px 6px 9px rgba(0,0,0,0.1) inset;
+            box-shadow: 0px 6px 9px rgba(0,0,0,0.05) inset;
         }
         .scale_own_left,.scale_own_right{
             flex: 1;
@@ -282,12 +283,41 @@
         .scale_own_earn_btn{
             margin-top: 10px;
             color: #666;
-            background-color: #c3c3c3;
+            background-color: #d3d3d3;
             border-radius: 6px;
             font-size: 14px;
             padding: 6px 10px;
             border:0;
             cursor: pointer;
+        }
+        .scale_approve{
+            background-image: -webkit-linear-gradient(top,#fc64af,#d25fec);
+            color: white;
+            height: 36px;
+            border-radius: 19px;
+            line-height: 30px;
+            box-shadow: 0px 4px 10px rgba(252,100,175,0.3);
+            font-weight: normal;
+            border: 0;
+            width: 105%;
+            font-size: 16px;
+            margin-left: -5%;
+        }
+        .scale_time_ratio_value{
+            box-shadow: 0px 3px 6px rgba(0,0,0,0.05) inset;
+            color: #fc64af;
+            border: 0;
+            border-radius: 20px;
+            line-height: 32px;
+            padding: 4px 16px 0px 16px;
+            font-size: 18px;
+            background-color: white;
+            width: 90%;
+        }
+        #scale_value{
+            width: 100%;
+        }#scale_time_ratio{
+            width: 100%;
         }
     </style>
     <script src="js/jquery-1.12.4.min.js"></script>
@@ -391,9 +421,13 @@
                 <div>
                     <input id="scale_time_ratio" type="range" name="">
                 </div>
-                <div>
-                    <div><input type="" name=""></div>
-                    <div><button>approve</button></div>
+                <div style="display: flex;margin-top: 10px;">
+                    <div style="flex: 1;width: 50%;">
+                        <input class="scale_time_ratio_value" type="" name="" value="40%">
+                    </div>
+                    <div style="flex: 1;width: 50%;">
+                        <button class="scale_approve">approve</button>
+                    </div>
                 </div>
             </div>
             <div class="scale_own">
