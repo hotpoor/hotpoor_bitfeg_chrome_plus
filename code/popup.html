@@ -12,6 +12,7 @@
             width: 380px;
             height: 560px;
             overflow-y: auto;
+            background-color: rgba(252,100,175,0.05);
         }
         .hide{
             display: none;
@@ -63,12 +64,45 @@
             box-shadow: 0px 4px 10px rgba(252,100,175,0.3);
             font-weight: normal;
         }
+        .action_tools{
+            display: flex;
+            margin-top: 20px;
+        }
+        .action_tools>div{
+            flex: 1;
+        }
+        .action_tools_btn{
+            text-align: center;
+            padding: 4px 6px;
+            font-size: 14px;
+            background-image: -webkit-linear-gradient(top,white,white);
+            color: #fc64af;
+            height: 30px;
+            border-radius: 19px;
+            line-height: 30px;
+            font-weight: bold;
+        }
+        .action_tools_btn.cancel{
+            width: 100px;
+        }
+        .action_tools_btn.continue{
+            width: 100px;
+        }
+
         .menu_main>.title{
             text-align: center;
             font-size: 20px;
             font-weight: bold;
             margin-top: 25px;
             margin-bottom: 15px;
+        }
+        .lines{
+            padding: 5px 20px;
+            background-color: white;
+            border-radius: 16px;
+        }
+        .lines>.line{
+            width: 100%;
         }
         .lines>.line>div{
             margin-top: 20px;
@@ -85,7 +119,7 @@
             text-align: left;
         }
         .lines>.line>.subtitle>.right{
-            flex: 2;
+            flex: 3;
             font-size: 10px;
             color: #fc64af;
             font-weight: bold;
@@ -95,7 +129,6 @@
             padding: 15px;
         }
         .line>.subtitle_inputs>.subtitle_input_div{
-            margin: 10px;
             width: 100%;
         }
         .line>.subtitle_inputs>.subtitle_input_div>.subtitle_input{
@@ -136,6 +169,36 @@
             font-weight: bold;
             text-align: center;
         }
+        .line>.line_options>.line_option>div{
+            text-align: center;
+            margin-top: 10px;
+        }
+        .line>.line_options>.line_option>div>.subtitle_btn{
+            padding: 0px 6px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 20px;
+            border: 1px solid #999;
+            color: #999;
+            font-size: 12px;
+            background-color: white;
+        }
+
+        ::-webkit-input-placeholder { /* WebKit browsers */
+          color: #999;
+          font-size: 12px;
+        }
+
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+          color: #999;
+          font-size: 12px;
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10+ */
+          color: #999;
+          font-size: 12px;
+        }  
+
     </style>
     <script src="js/jquery-1.12.4.min.js"></script>
 </head>
@@ -186,17 +249,25 @@
                     <div class="line_options">
                         <div class="line_option">
                             <div class="subtitle">Resolution Date</div>
-                            <div></div>
+                            <div><button class="subtitle_btn">Select Date</button></div>
                         </div>
                         <div class="line_option">
                             <div class="subtitle">Category</div>
-                            <div></div>
+                            <div><button class="subtitle_btn">Select Category</button></div>
                         </div>
                         <div class="line_option">
                             <div class="subtitle">Arbitrator</div>
-                            <div></div>
+                            <div><button class="subtitle_btn">Select Url</button></div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="action_tools">
+                <div class="action_tools_area left" align="left">
+                    <div class="action_tools_btn cancel">cancel</div>
+                </div>
+                <div class="action_tools_area right" align="right">
+                    <div class="action_tools_btn continue">continue</div>
                 </div>
             </div>
 
