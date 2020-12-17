@@ -413,6 +413,9 @@
             margin-top: -10px;
             margin-left: -10px;
         }
+        .scale_title{
+            margin-top: 30px;
+        }
         .scale_span{
             font-size: 30px;
             color: #333;
@@ -515,7 +518,7 @@
                 <input id="scale_value" type="range" name="" value="1.5" min="0.0" step="0.1" max="5.0">
                 <span class="scale_value_span">+1.5%</span>
             </div>
-            <div>
+            <div style="margin-top:15px;">
                 <div style="display: flex;">
                     <span class="scale_token_span_left">Choose Your LP Token</span>
                     <span class="scale_token_span_right">Token</span>
@@ -525,11 +528,11 @@
                         <button id="oken_change_btn">Token</button>
                     </div>
                     <div class="token_value_num_area" align="right">
-                        <input id="token_value_num" type="number" min="0" name="" value="86">
+                        <input id="token_value_num" type="tel" min="0" name="" value="86">
                     </div>
                 </div>
             </div>
-            <div class="scale_range_time">
+            <div class="scale_range_time" style="margin-top:15px;">
                 <div style="display: flex;">
                     <span class="scale_time_span">Scale ratio</span>
                     <span class="scale_time_max">10 Time left</span>
