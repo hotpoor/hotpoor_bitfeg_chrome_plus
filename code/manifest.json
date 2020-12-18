@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "BitFEG",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "BitFEG，一款实用的合约创建工具",
     "icons": {
         "16": "images/icon16.png",

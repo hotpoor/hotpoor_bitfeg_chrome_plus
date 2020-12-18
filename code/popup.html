@@ -255,32 +255,32 @@
             color: rgba(33,150,243);
             box-shadow: 0px 3px 6px rgba(33,150,243,0.3);
         }
-        .scale_own{
-            margin:20px 0px;
+        .scale_own,.swap_own{
+            margin:10px 0px 20px 0px;
             display: flex;
             background-color: white;
             border-radius: 20px;
             padding: 20px;
             box-shadow: 0px 6px 9px rgba(0,0,0,0.05) inset;
         }
-        .scale_own_left,.scale_own_right{
+        .scale_own_left,.scale_own_right,.swap_own_left,.swap_own_right{
             flex: 1;
         }
-        .scale_own_title{
+        .scale_own_title,.swap_own_title{
             font-size: 14px;
             color: #666;
         }
 
-        .scale_own_value{
+        .scale_own_value,.swap_own_value{
             margin-top: 10px;
             font-size: 24px;
             color: #333;
         }
-        .scale_own_earn{
+        .scale_own_earn,.swap_own_earn{
             font-size: 14px;
             color: #333;
         }
-        .scale_own_earn_btn{
+        .scale_own_earn_btn,.swap_own_earn_btn{
             margin-top: 10px;
             color: #666;
             background-color: #e3e3e3;
@@ -434,12 +434,37 @@
             font-weight: bold;
             margin: -10px;
         }
-
+        .swap_market_title{
+            font-weight: bold;
+            font-size: 14px;
+            word-break: break-all;
+            padding: 20px 15px 10px 15px;
+            color: #666;
+        }
+        .swap_commit_btn{
+            background-image: -webkit-linear-gradient(top,#fc64af,#d25fec);
+            color: white;
+            height: 36px;
+            border-radius: 18px;
+            line-height: 30px;
+            box-shadow: 0px 4px 10px rgba(252,100,175,0.3);
+            font-weight: normal;
+            border: 0;
+            padding: 0px 10px;
+            font-size: 14px;
+            width: 160px;
+            margin: 10px;
+        }
+        .swap_commit_info{
+            font-size: 14px;
+            color: #999;
+            padding: 0px 15px 0px 15px;
+            margin-top:-10px;
+        }
     </style>
     <script src="js/jquery-1.12.4.min.js"></script>
 </head>
 <body>
-    <script src="js/bitfeg.js"></script>
     <div class="menus">
         <div class="menu_item" data-name="bitfeg_create">Create</div>
         <div class="menu_item" data-name="bitfeg_scale">Scale</div>
@@ -507,7 +532,6 @@
                     <div class="action_tools_btn continue">continue</div>
                 </div>
             </div>
-
         </div>
         <div class="menu_main hide" data-name="bitfeg_scale">
             <div class="scale_title">
@@ -566,7 +590,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="menu_main hide" data-name="bitfeg_market">
             <div class="market_tags">
@@ -624,10 +647,70 @@
                 </div>
             </div>
         </div>
-        <div class="menu_main hide" data-name="bitfeg_swap"></div>
+        <div class="menu_main hide" data-name="bitfeg_swap">
+            <div class="title">Swap</div>
+            <div class="options">
+                <div class="option selected">
+                    <p>SWAP</p>
+                </div>
+                <div class="option">
+                    <p>Add Liquidity</p>
+                </div>
+            </div>
+            <div>
+                <div class="swap_market_title">Will ETH trade above $300 on Coinbase any time on November 1st?</div>
+            </div>
+            <div class="swap_own">
+                <div class="swap_own_left">
+                    <div class="swap_own_title swap_tag_now swap_tag_wap">From</div>
+                    <div class="swap_own_title swap_tag_now swap_tag_stake">Input</div>
+                    <div class="swap_own_value"><span>668</span></div>
+                </div>
+                <div class="swap_own_right">
+                    <div class="swap_own_earn">Balance: <span>0</span></div>
+                    <div style="display: flex;">
+                        <div style="flex: 1;">
+                            <button class="swap_own_earn_btn">MAX</button>
+                        </div>
+                        <div style="flex: 1;">
+                            <button class="swap_own_earn_btn">ETH</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div align="center">
+                <div class="swap_tag_now swap_tag_wap">+</div>
+                <div class="swap_tag_now swap_tag_stake"><span>→</span><span>→</span></div>
+            </div>
+            <div class="swap_own">
+                <div class="swap_own_left">
+                    <div class="swap_own_title swap_tag_now swap_tag_wap">To</div>
+                    <div class="swap_own_title swap_tag_now swap_tag_stake">Input</div>
+                    <div class="swap_own_value"><span>668</span></div>
+                </div>
+                <div class="swap_own_right">
+                    <div class="swap_own_earn">Balance: <span>0</span></div>
+                    <div style="display: flex;">
+                        <div style="flex: 1;">
+                            <button class="swap_own_earn_btn">MAX</button>
+                        </div>
+                        <div style="flex: 1;">
+                            <button class="swap_own_earn_btn">LTC</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="swap_commit_info">Price per share:</div>
+                <div align="center">
+                    <button class="swap_commit_btn swap_tag_now swap_tag_wap">swap</button>
+                    <button class="swap_commit_btn swap_tag_now swap_tag_stake">Stake</button>
+                </div>
+            </div>
+        </div>
         <div class="menu_main hide" data-name="bitfeg_community"></div>
         <div class="menu_main hide" data-name="bitfeg_mine"></div>
-
     </div>
+    <script src="js/bitfeg.js"></script>
 </body>
 </html>
